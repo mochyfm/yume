@@ -1,13 +1,121 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* ==================================================== */
+                  /* Estilo LoginForm */
+/* ==================================================== */
+
+/* Estilo general del LoginForm */
+
+nav {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  font-size: 23px;
+  padding: 35px 30px 35px 50px ;
+  box-shadow: -3px 6px 5px 0px #969696, 
+  5px -5px 5px 0px #E8E8E8;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Logo y nombre */
+
+div.logo-site {
+  margin: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
+
+div.logo-site > span {
+  font-size: 30px;
+  font-style: italic;
+  margin-left: 20px;
+}
+
+div.logo-site > img {
+  height: 60px;
+  margin: 0px;
+}
+
+/* Panel de Inicio de Sesion */
+
+form.loginForm {
+  display: flex;
+  align-self: center;
+  justify-content: right;
+  width: 70%;
+}
+
+form.loginForm > input {
+  margin: 0px 25px;
+  box-shadow: 4px 4px 5px 0px #919191;
+  padding: 15px;
+}
+
+form.loginForm > input:nth-last-of-type() {
+  margin-right: 30px;
+}
+
+form.loginForm > button {
+  margin-right: 30px;
+  width: 250px;
+  background-color: none;
+  border: 1px solid #0e7be8;
+  color: #0e7be8;
+  
+}
+
+form.loginForm > button:hover {
+  background-color: #0e7be8;
+  border: 1px solid #0e7be8;
+  color: black;
+  box-shadow: 4px 3px 5px 0px #9EB4FF;
+}
+
+form.loginForm > .noAccount {
+  display: flex;
+  width: 30%;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-size: 13px;
+}
+
+form.loginForm > div.noAccount > button {
+  width: 100%;
+  text-align: center;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+form.loginForm > div.noAccount > a:hover {
+  color: #0e7be8;
+  transition-delay: 0.1s;
+}
+
+
+
+/* ================================================================================== */
+/*                ==========  ||======  ||\\  //||      //\\       //======
+/*                    ||      ||        || \\// ||     //  \\     //
+/*                    ||      ||====    ||  ==  ||    //====\\    \\=====\\     
+/*                    ||      ||        ||      ||   //      \\          ||
+/*                    ||      ||======  ||      ||  //        \\   =====//
+/* ================================================================================== */
+
+
+/* ==================================================== */
+                      /* Tema Oscuro */
+/* ==================================================== */
+
+nav.dark-theme {
+  background-color: black;
+  color: White;
+  padding: 10px;
+  font-size: 25px;
+}
+
+span.dark-theme {
+
+}
+
+.loginForm.dark-theme {
+
+}
+
+
