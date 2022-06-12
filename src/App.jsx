@@ -1,6 +1,5 @@
-import Login from "./Login";
-import MainSite from "./MainSite/MainSite";
-import { v4 as uuidv4 } from 'uuid';
+import LoginNavbar from "./LoginNavbar/LoginNavbar";
+// import { v4 as uuidv4 } from 'uuid';
 import { useState } from "react";
 
 const defaultOptions = {
@@ -8,7 +7,6 @@ const defaultOptions = {
 }
 
 const defaultUser = {
-    userId: uuidv4(),
     userName: '',
     pass: '', 
     loginState: false,
@@ -21,7 +19,7 @@ const App = () => {
   
     return (
     <div>
-        { user.loginState ? <MainSite user={user} alterUser={alterUser} /> : <Login user={user} alterUser={alterUser} /> }
+        <LoginNavbar user={user} alterUser={alterUser} />
     </div>
   )
 

@@ -1,8 +1,15 @@
 /* ==================================================== */
-                  /* Estilo LoginForm */
+                  /* Estilo loginNavbar */
 /* ==================================================== */
 
-/* Estilo general del LoginForm */
+/* Estilo general del loginNavbar */
+
+body {
+  background-image: url("../public/images/old_background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100px;
+}
 
 nav {
   display: flex;
@@ -12,83 +19,294 @@ nav {
   padding: 35px 30px 35px 50px ;
   box-shadow: -3px 6px 5px 0px #969696, 
   5px -5px 5px 0px #E8E8E8;
+  height: 100px;
+  animation-duration: 0.5s;
 }
 
 /* Logo y nombre */
 
 div.logo-site {
+  display: flex;
+  align-items: center;
   margin: 10px;
   margin-left: 20px;
   margin-right: 20px;
 }
 
 div.logo-site > span {
-  font-size: 30px;
+  font-size: 55px;
   font-style: italic;
-  margin-left: 20px;
+  margin-left: 5px;
+  font-family: 'Lobster';
 }
 
 div.logo-site > img {
-  height: 60px;
+  height: 75px;
   margin: 0px;
 }
 
+/* Enlaces de acceso */
+
+div.link-buttons {
+  display: flex;
+  align-items: center;
+}
+
+div.link-buttons > a {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+div.link-buttons > a:hover {
+  padding: 10px 0px;
+  cursor: pointer;
+  border-bottom: 5px solid #a10ac7;
+}
+
+div.link-buttons > a:hover:nth-of-type(1) {
+  padding: 10px 0px;
+  border-bottom: 5px solid #4987e2;
+  cursor: pointer;
+}
+
+div.link-buttons > a:hover:nth-of-type(2) {
+  padding: 10px 0px;
+  border-bottom: 5px solid #34d7cd;
+  cursor: pointer;
+}
+
+div.link-buttons > a:hover:nth-of-type(3) {
+  padding: 10px 0px;
+  border-bottom: 5px solid #fa70bc;
+  cursor: pointer;
+}
+
+div.link-buttons > a:hover:nth-of-type(4) {
+  padding: 10px 0px;
+  border-bottom: 5px solid #a10ac7;
+  cursor: pointer;
+}
+
+
 /* Panel de Inicio de Sesion */
 
-form.loginForm {
+form.loginNavbar {
   display: flex;
   align-self: center;
   justify-content: right;
-  width: 70%;
+  width: 30%;
 }
 
-form.loginForm > input {
-  margin: 0px 25px;
-  box-shadow: 4px 4px 5px 0px #919191;
-  padding: 15px;
+form.loginNavbar button {
+  border-radius: 80px;
 }
 
-form.loginForm > input:nth-last-of-type() {
-  margin-right: 30px;
-}
-
-form.loginForm > button {
-  margin-right: 30px;
-  width: 250px;
+form.loginNavbar > button {
+  margin-right: 15px;
+  width: 30%;
+  height: 35px;
   background-color: none;
-  border: 1px solid #0e7be8;
-  color: #0e7be8;
-  
+  font-size: 16px;
+  border: 1px solid #5668d8;
+  color: #5668d8;
+  height: 38px;
+}
+   
+form.loginNavbar > button:hover {
+  background-color: #5668d8;
+  border: 1px solid #5668d8;
+  color: #fff;
 }
 
-form.loginForm > button:hover {
-  background-color: #0e7be8;
-  border: 1px solid #0e7be8;
-  color: black;
-  box-shadow: 4px 3px 5px 0px #9EB4FF;
-}
-
-form.loginForm > .noAccount {
+form.loginNavbar > .noAccount {
   display: flex;
   width: 30%;
+  height: 35px;
   justify-content: center;
   flex-wrap: wrap;
-  font-size: 13px;
+  font-size: 0.9rem;
+  margin-bottom: 30px;
 }
 
-form.loginForm > div.noAccount > button {
+@media only screen and (max-width: 1500px) {
+  form.loginNavbar > .noAccount {
+    font-size: 10px;
+  }
+}
+
+form.loginNavbar > div.noAccount > button {
   width: 100%;
   text-align: center;
-  font-size: 13px;
+  font-size: 16px;
   margin-bottom: 10px;
+  border: 1px solid #a10ac7;
+  color: #a10ac7;
 }
 
-form.loginForm > div.noAccount > a:hover {
-  color: #0e7be8;
+
+form.loginNavbar > div.noAccount > button:hover {
+  border: 1px solid #a10ac7;
+  background-color: #a10ac7;
+  color:#fff;
+} 
+
+
+form.loginNavbar > div.noAccount > a:hover {
+  color: #d943ff;
   transition-delay: 0.1s;
 }
 
+/* Panel cuando ya se ha iniciado sesión */
 
+.profile-nav-panel {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-right: 30px;
+}
+
+.profile-nav-panel > .username {
+  margin-right: 15px;
+}
+
+.profile-pic {
+  background-color: #fff;
+  border-radius: 50%;
+  width: 55px;
+  margin-left: 5px;
+  margin-right: 25px;
+}
+
+.profile-nav-panel .sign-out {
+  color: #a10ac7;
+  background-color: #101010;
+  border: 1px solid #a10ac7;
+  border-radius: 50%;
+  padding: 10px 15px;
+}
+
+.profile-nav-panel .sign-out:hover {
+  color: #fff;
+  background-color: #a10ac7;
+  border: 1px solid #101010;
+  border-radius: 50%;
+}
+
+
+/* ==================================================== */
+                  /* Estilo loginCard (Form) */
+/* ==================================================== */
+
+.loginCard {
+  margin: 50px auto;
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-self: center;
+  width: 30%;
+  height: 700px;
+  animation-duration: 0.5s;
+} 
+
+.loginCard > h1 {
+  margin: 0px;
+  margin-top: 50px;
+  background-color: #5668d8;
+  border-radius: 20px 20px 0px 0px;
+  width: 100%;
+  padding: 30px;
+  text-align: center;
+  font-family: 'Lobster';
+  font-size: 70px;
+  box-shadow: 8px 7px 5px 0px rgba(86, 104, 216, 0.33);
+}
+
+.loginForm {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  border-radius: 0px 0px 20px 20px;
+  border: 1px solid #101010;
+  background-color: #101010;
+  color: #fff;
+  width: 100%;
+  height: 70%;
+  box-shadow: 8px 7px 5px 0px rgba(0, 0, 0, 0.33);
+}
+
+.lg-form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  margin-top: 50px;
+}
+
+.lg-form label {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+}
+
+.lg-form > label:not(:nth-of-type(1)), input{
+  margin-top: 20px;
+}
+
+.lg-form > input {
+  padding: 10px;
+  width: 75%;
+  border-radius: 10px;
+} 
+
+.lg-form > input::placeholder {
+  font-style: italic;
+}
+
+.lg-form > input:focus::placeholder {
+  color: transparent;
+}
+
+.lg-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.lg-buttons > button {
+  width: 25%;
+  border-radius: 10px;
+  border: 1px solid #5668d8;
+  background-color: #101010;
+  color: #5668d8;
+}
+
+.lg-buttons > button.disabled {
+  border: 1px solid #868fc9;
+  background-color: #000;
+  counter-reset: #868fc9;
+}
+
+.lg-buttons > button:hover {
+  background-color: #5668d8;
+  color: #fff;
+}
+
+.lg-buttons > button:nth-of-type(1) {
+  margin-top: 50px;
+}
+
+.lg-buttons > button:not(:nth-of-type(1)) {
+  margin-top: 30px;
+}
 
 /* ================================================================================== */
 /*                ==========  ||======  ||\\  //||      //\\       //======
@@ -104,18 +322,11 @@ form.loginForm > div.noAccount > a:hover {
 /* ==================================================== */
 
 nav.dark-theme {
-  background-color: black;
+  background-color: #101010;
+  border-bottom: 5px solid #fff;
   color: White;
   padding: 10px;
   font-size: 25px;
-}
-
-span.dark-theme {
-
-}
-
-.loginForm.dark-theme {
-
 }
 
 
