@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types'
 // import { useState } from 'react'
 
-const LoginStage = ({ user, handleForm, alterUser }) => {
+const LoginStage = ({ user, handleLoginForm, alterUser }) => {
 
   const logout = (e) => {
-    handleForm(false, e);
+    handleLoginForm(false, e);
     alterUser({
       ...user,
       loginState: false,
@@ -28,7 +28,7 @@ const LoginStage = ({ user, handleForm, alterUser }) => {
 
 LoginStage.propTypes = {
   user: PropTypes.object,
-  handleForm: PropTypes.func,
+  handleLoginForm: PropTypes.func,
   alterUser: PropTypes.func
 }
 

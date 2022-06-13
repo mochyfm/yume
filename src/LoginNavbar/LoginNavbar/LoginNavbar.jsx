@@ -1,21 +1,14 @@
 import PropTypes from 'prop-types'
-import { useState } from 'react'
 import LoginCard from '../LoginCard'
+import SignInCard from '../SignInCard'
 import LogedStage from './LogedStage'
 import LoginButtons from './LoginButtons'
 
-const Login = ({ user, alterUser}) => {
-
-    const [loginFormState, setLoginFormState] = useState(false)
-
-    const handleForm = (state, e) => {
-        e.preventDefault();
-        setLoginFormState(state);
-    }
+const LoginNavbar = ({ user, alterUser, loginFormState, registerFormState, handleSignOutForm , handleLoginForm , usersList, alterUsersList}) => {
 
   return (
     <div>
-        { !loginFormState ?
+        {!loginFormState && !registerFormState ? 
         <nav className={user.userOptions.colorTheme + ' animate__slideInDown'}>
             <div className={user.userOptions.colorTheme + ' logo-site'}>
                 <img src='images/logo.png'/>
@@ -27,16 +20,25 @@ const Login = ({ user, alterUser}) => {
                 <a>Contact</a>
                 <a>{user.username}</a>
             </div>
-            { user.loginState ? <LogedStage user={user} handleForm={handleForm} alterUser={alterUser}/> : <LoginButtons handleForm={handleForm} />}
+            { user.loginState ? <LogedStage user={user} handleLoginForm={handleLoginForm} alterUser={alterUser}/> 
+            : <LoginButtons handleLoginForm={handleLoginForm} handleSignOutForm={handleSignOutForm} usersList={usersList} alterUsersList={alterUsersList} />}
         </nav> 
-        : <LoginCard user={user} alterUser={alterUser} setLoginFormState={setLoginFormState}/>}
+        : loginFormState && !registerFormState ? <LoginCard user={user} alterUser={alterUser} handleLoginForm={handleLoginForm}/> :
+        !loginFormState && registerFormState ? <SignInCard handleSignOutForm={handleSignOutForm}/> : null }
+    
     </div>
   )
 }
 
-Login.propTypes = {
+LoginNavbar.propTypes = {
+    loginFormState: PropTypes.bool,
+    registerFormState: PropTypes.bool,
+    handleSignOutForm: PropTypes.func,
+    handleLoginForm: PropTypes.func,
     user: PropTypes.object,
-    alterUser: PropTypes.func
+    alterUser: PropTypes.func,
+    usersList: PropTypes.array,
+    alterUsersList: PropTypes.func
 }
 
-export default Login
+export default LoginNavbar

@@ -1,3 +1,58 @@
+/* ================================================================================= */
+                  /* Estilos de la carta de presentación */
+/* ================================================================================= */
+
+.prsnt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  height: 50vh;
+}
+
+.prsnt-title {
+  width: 100%;
+  font-family: 'Lobster';
+  font-size: 100px;
+  color: #fff;
+  margin: 100px auto;
+  margin-bottom: 0px;
+  text-align: center;
+  text-shadow: 0 1px #808d93, -1px 0 #cdd2d5, -1px 2px #808d93,
+  -2px 1px #cdd2d5, -2px 3px #808d93, -3px 2px #cdd2d5, -3px 4px #808d93,
+  -4px 3px #cdd2d5, -4px 5px #808d93, -5px 4px #cdd2d5, -5px 6px #808d93, 
+  -6px 5px #cdd2d5, -6px 7px #808d93, -7px 6px #cdd2d5, -7px 8px #808d93, 
+  -8px 7px #cdd2d5;
+}
+
+.prsnt > button {
+  border: none;
+  color: #cdd2d5;
+  border-radius: 10px;
+  width: 40%;
+  margin: 15px;
+  padding: 10px 20px;
+} 
+
+.prsnt > .prsnt-btn-lg {
+  background-color: #5668d8;
+}
+
+.prsnt > .prsnt-btn-lg:hover {
+  background-color: #3b4794;
+  color: #fff;
+}
+
+.prsnt > .prsnt-btn-sg {
+  background-color: #a10ac7;
+}
+
+.prsnt > .prsnt-btn-sg:hover {
+  background-color: #780994;
+  color: #fff;
+}
+
 /* ==================================================== */
                   /* Estilo loginNavbar */
 /* ==================================================== */

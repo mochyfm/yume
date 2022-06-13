@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import { useState } from 'react'
 
-const LoginCard = ({user, alterUser, setLoginFormState}) => {
+const LoginCard = ({user, alterUser, handleLoginForm}) => {
 
     const [form, setForm] = useState({
         userName: '',
@@ -22,7 +22,7 @@ const LoginCard = ({user, alterUser, setLoginFormState}) => {
                 ...form,
                 loginState: true
             })
-            setLoginFormState(false);
+            handleLoginForm(false, e)
             setForm('')
     }
 
@@ -38,7 +38,7 @@ const LoginCard = ({user, alterUser, setLoginFormState}) => {
             </div>
             <div className="lg-buttons">
                 <button className="btn" type="submit">Send</button>
-                <button className="btn" type="button" onClick={() => setLoginFormState(false)}>Cancel</button>
+                <button className="btn" type="button" onClick={(e) => handleLoginForm(false, e)}>Cancel</button>
             </div>
         </form>
     </div>
@@ -48,7 +48,7 @@ const LoginCard = ({user, alterUser, setLoginFormState}) => {
 LoginCard.propTypes = {
     user: PropTypes.object,
     alterUser: PropTypes.func,
-    setLoginFormState: PropTypes.func
+    handleLoginForm: PropTypes.func
 }
 
 export default LoginCard
